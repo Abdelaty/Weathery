@@ -1,7 +1,5 @@
 package com.example.forecastmvvm.data.db.entity
 
-
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -15,15 +13,14 @@ data class CurrentWeatherEntry(
     @SerializedName("feelslike")
     val feelslike: Double,
     @SerializedName("is_day")
-    val isDay: String,
+    val is_day: String,
     @SerializedName("uv_index")
-    val uvIndex: Double,
+    val uv_index: Double,
     @SerializedName("wind_speed")
-    val windSpeed: Double,
+    val wind_speed: Double,
     @SerializedName("wind_dir")
-    val windDirection: String
+    val wind_dir: String
 ) {
     @PrimaryKey(autoGenerate = false)
-    @ColumnInfo
     var id: Int = CURRENT_WEATHER_ID
 }

@@ -8,11 +8,11 @@ data class MetricCurrentWeatherEntry(
     @ColumnInfo(name = "feelslike")
     override val feelslike: Double,
     @ColumnInfo(name = "is_day")
-    override val isDay: String,
+    override val is_day: String,
     @ColumnInfo(name = "uv_index")
-    override val uvIndex: Double,
+    override val uv_index: Double,
     @ColumnInfo(name = "wind_speed")
-    override val windSpeed: Double,
+    override val wind_speed: Double,
     @ColumnInfo(name = "wind_dir")
-    override val windDirection: String
+    override val wind_dir: String
 ) : UnitSpecificCurrentWeatherEntry
