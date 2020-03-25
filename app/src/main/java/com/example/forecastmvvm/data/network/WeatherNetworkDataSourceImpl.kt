@@ -14,10 +14,10 @@ class WeatherNetworkDataSourceImpl(
     override val downloadedCurrentWeather: LiveData<CurrentWeatherResponse>
         get() = _downloadedCurrentWeather
 
-    override suspend fun fetchCurrentWeather(location: String, languageCode: String) {
+    override suspend fun fetchCurrentWeather(location: String) {
         try {
             val fetchedCurrentWeather =
-                weatherApiService.getCurrentWeatherAsync(location, languageCode).await()
+                weatherApiService.getCurrentWeatherAsync(location).await()
             _downloadedCurrentWeather.postValue(fetchedCurrentWeather)
         } catch (e: NoConnectivityException) {
             Log.e("Connectivity", "No Internet Connection")
