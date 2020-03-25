@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.forecastmvvm.data.db.entity.CurrentWeatherEntry
 
-@Database(entities = [CurrentWeatherEntry::class], version = 1)
+@Database(entities = [CurrentWeatherEntry::class], version = 2)
 abstract class ForecastDatabase : RoomDatabase() {
     abstract fun currentWeatherDao(): CurrentWeatherDao
 
