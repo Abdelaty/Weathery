@@ -5,10 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.forecastmvvm.data.db.entity.CurrentWeatherEntry
+import com.example.forecastmvvm.data.db.entity.WeatherLocation
 
-@Database(entities = [CurrentWeatherEntry::class], version = 2)
+@Database(entities = [CurrentWeatherEntry::class, WeatherLocation::class], version = 1)
 abstract class ForecastDatabase : RoomDatabase() {
     abstract fun currentWeatherDao(): CurrentWeatherDao
+    abstract fun weatherLocationDao(): WeatherLocationDao
 
     companion object {
         @Volatile
@@ -16,7 +18,7 @@ abstract class ForecastDatabase : RoomDatabase() {
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: buildDatabase(context)
+            instance ?: buildDatabase(context).also { instance = it }
 
         }
 

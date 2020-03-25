@@ -20,8 +20,11 @@ data class CurrentWeatherEntry(
     val wind_speed: Double,
     @SerializedName("wind_dir")
     val wind_dir: String
-
+//    @Embedded(prefix = "weather_icons")
+//    val condition: Conditions
 ) {
     @PrimaryKey(autoGenerate = false)
     var id: Int = CURRENT_WEATHER_ID
+
+
 }

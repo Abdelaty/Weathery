@@ -15,4 +15,8 @@ data class MetricCurrentWeatherEntry(
     override val wind_speed: Double,
     @ColumnInfo(name = "wind_dir")
     override val wind_dir: String
+//    @ColumnInfo(name = "condition_icon")
+//    override val conditionIconUrl: String
+//
+//    @ColumnInfo(name = "weather_icon") val weather_icon: String = weather_icons[0]
 ) : UnitSpecificCurrentWeatherEntry

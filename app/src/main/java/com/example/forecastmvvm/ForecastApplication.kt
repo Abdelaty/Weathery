@@ -5,6 +5,8 @@ import com.example.forecastmvvm.data.ForecastRepository
 import com.example.forecastmvvm.data.ForecastRepositoryImpl
 import com.example.forecastmvvm.data.db.ForecastDatabase
 import com.example.forecastmvvm.data.network.*
+import com.example.forecastmvvm.data.provider.LocationProvider
+import com.example.forecastmvvm.data.provider.LocationProviderImpl
 import com.example.forecastmvvm.ui.weather.current.CurrentWeatherViewModelFactory
 import com.jakewharton.threetenabp.AndroidThreeTen
 import org.kodein.di.Kodein
@@ -20,10 +22,19 @@ class ForecastApplication : Application(), KodeinAware {
         import(androidModule(this@ForecastApplication))
         bind() from singleton { ForecastDatabase(instance()) }
         bind() from singleton { instance<ForecastDatabase>().currentWeatherDao() }
+        bind() from singleton { instance<ForecastDatabase>().weatherLocationDao() }
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
         bind<WeatherNetworkDataSource>() with singleton { WeatherNetworkDataSourceImpl(instance()) }
+        bind<LocationProvider>() with singleton { LocationProviderImpl() }
         bind() from singleton { WeatherApiService(instance()) }
-        bind<ForecastRepository>() with singleton { ForecastRepositoryImpl(instance(), instance()) }
+        bind<ForecastRepository>() with singleton {
+            ForecastRepositoryImpl(
+                instance(),
+                instance(),
+                instance(),
+                instance()
+            )
+        }
         bind() from provider { CurrentWeatherViewModelFactory(instance()) }
 
     }

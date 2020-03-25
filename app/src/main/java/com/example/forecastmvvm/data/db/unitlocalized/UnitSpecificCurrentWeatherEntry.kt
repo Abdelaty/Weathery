@@ -7,5 +7,5 @@ interface UnitSpecificCurrentWeatherEntry {
     val uv_index: Double
     val wind_speed: Double
     val wind_dir: String
-
+//    val conditionIconUrl: String
 }
