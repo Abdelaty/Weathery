@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF444444">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="88dp"
+        android:keepScreenOn="true"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+        app:cameraEngine="camera2"
+        app:cameraExperimental="true"
+        app:cameraFacing="back"
+        app:cameraFlash="auto"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="filterControl1"
+        app:cameraGestureScrollVertical="exposureCorrection"
+        app:cameraGestureTap="autoFocus"
+        app:cameraGrid="off"
+        app:cameraMode="picture"
+        app:cameraPlaySounds="true"
+        app:cameraPreview="glSurface">
+
+        <!-- Watermark -->
+        <TextView
+            android:id="@+id/watermark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="20dp"
+            android:paddingTop="80dp"
+            android:textColor="@color/white"
+            app:layout_drawOnPictureSnapshot="true"
+            app:layout_drawOnPreview="true"
+            app:layout_drawOnVideoSnapshot="true"
+            tools:text="Weather" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/ic_launcher_foreground" />
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="96dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="4">
+
+
+        <ImageButton
+            android:id="@+id/btn_discard"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/ic_close"
+            android:text="discard"
+            android:visibility="invisible" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/capturePictureSnapshot"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SNAP"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_save"
+
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/ic_down_arrow"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

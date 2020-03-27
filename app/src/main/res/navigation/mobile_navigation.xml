@@ -6,21 +6,27 @@
     app:startDestination="@id/currentWeatherFragment">
     <fragment
         android:id="@+id/currentWeatherFragment"
-        android:name="com.example.forecastmvvm.ui.weather.current.CurrentWeatherFragment"
+        android:name="com.kmsoftapp.weathery.ui.weather.current.CurrentWeatherFragment"
         android:label="CurrentWeatherFragment"
-        tools:layout="@layout/current_weather_fragment" />
+        tools:layout="@layout/fragment_weather">
+        <action
+            android:id="@+id/action_currentWeatherFragment_to_cameraPreviewFragment"
+            app:destination="@id/cameraPreviewFragment" />
+        <action
+            android:id="@+id/action_currentWeatherFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/futureListWeatherFragment"
-        android:name="com.example.forecastmvvm.ui.weather.future.list.futureListWeatherFragment"
-        android:label="FutureListWeatherFragment"
-        tools:layout="@layout/future_list_weather_fragment" />
-    <fragment
-        android:id="@+id/fragmentDetailWeatherFragment"
-        android:name="com.example.forecastmvvm.ui.weather.future.detail.FragmentDetailWeatherFragment"
-        android:label="DetailWeatherFragment"
-        tools:layout="@layout/fragment_detail_weather_fragment" />
+        android:id="@+id/cameraPreviewFragment"
+        android:name="com.kmsoftapp.weathery.ui.camera.CameraPreviewFragment"
+        android:label="CameraPreviewFragment"
+        tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.forecastmvvm.ui.settings.SettingsFragment"
+        android:name="com.kmsoftapp.weathery.SettingFragment"
         android:label="SettingsFragment" />
+    <!--    <fragment-->
+    <!--        android:id="@+id/fullImagePreviewFragment"-->
+    <!--        android:name="com.kmsoftapp.weathery.ui.camera.CameraPreviewFragment"-->
+    <!--        android:label="SettingsFragment" />-->
 </navigation>
