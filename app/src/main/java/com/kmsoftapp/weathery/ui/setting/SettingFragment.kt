@@ -1,8 +1,9 @@
-package com.kmsoftapp.weathery
+package com.kmsoftapp.weathery.ui.setting
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import com.kmsoftapp.weathery.R
 
 class SettingFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {

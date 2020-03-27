@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.kmsoftapp.weathery.SettingFragment"
+        android:name="com.kmsoftapp.weathery.ui.setting.SettingFragment"
         android:label="SettingsFragment" />
     <!--    <fragment-->
     <!--        android:id="@+id/fullImagePreviewFragment"-->
