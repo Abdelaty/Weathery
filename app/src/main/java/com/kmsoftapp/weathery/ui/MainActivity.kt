@@ -89,10 +89,6 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         }
     }
 
-    //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        super.onCreateOptionsMenu(menu)
-//        return menuInflater.inflate(R.menu.menu)
-//    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return true
